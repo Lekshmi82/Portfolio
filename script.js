@@ -45,46 +45,43 @@ animateParticles();
 window.addEventListener('resize', () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
+  createFireflies(); // recreate fireflies on resize
 });
 
 // =======================
 // Fireflies
 // =======================
-const container = document.getElementById('firefly-container');
+const fireflyContainer = document.getElementById('firefly-container');
+let fireflyCount = 30;
 
-// Adjust firefly count for mobile
-const fireflyCount = window.innerWidth < 768 ? 15 : 30;
+// Adjust for smaller screens
+if(window.innerWidth < 768) fireflyCount = 15;
 
 function createFireflies() {
-  container.innerHTML = ''; // clear old fireflies
-
+  fireflyContainer.innerHTML = ''; // remove old fireflies
   for (let i = 0; i < fireflyCount; i++) {
     const firefly = document.createElement('div');
     firefly.classList.add('firefly');
 
-    // random initial position
     const x = Math.random() * window.innerWidth;
     const y = Math.random() * window.innerHeight;
     firefly.style.left = x + 'px';
     firefly.style.top = y + 'px';
 
-    // random movement range
-    const moveX = (Math.random() - 0.5) * 150;
+    // movement range
+    const moveX = (Math.random() - 0.5) * 150; // +-75px
     const moveY = (Math.random() - 0.5) * 150;
     firefly.style.setProperty('--x', moveX + 'px');
     firefly.style.setProperty('--y', moveY + 'px');
 
-    // random animation duration & delay
-    const duration = 4 + Math.random() * 2;
+    // animation duration & delay
+    const duration = 4 + Math.random() * 2; // 4-6s
     firefly.style.animationDuration = `${duration}s, ${duration}s`;
-    firefly.style.animationDelay = `${Math.random() * 2}s, ${Math.random() * 2}s`;
+    firefly.style.animationDelay = `${Math.random()*2}s, ${Math.random()*2}s`;
 
-    container.appendChild(firefly);
+    fireflyContainer.appendChild(firefly);
   }
 }
 
 // initial creation
 createFireflies();
-
-// recreate fireflies on resize
-window.addEventListener('resize', createFireflies);
