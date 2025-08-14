@@ -521,68 +521,7 @@ body, html {
   z-index: 1000;
 }
 
-/* --- Firefly / tiny glowing lights --- */
-.firefly-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1; /* behind content */
-  overflow: hidden;
-  background: #050d23; /* dark blue background */
-}
 
-.firefly {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: #fffacd; /* bright light yellow */
-  border-radius: 50%;
-  opacity: 0.9;
-  pointer-events: none;
-  box-shadow: 0 0 6px #fffacd, 0 0 12px #fffacd, 0 0 18px #fffacd; /* glowing effect */
-  animation: flicker 2.5s infinite alternate, moveFirefly linear infinite;
-}
 
-@keyframes flicker {
-  0% { opacity: 0.3; transform: scale(0.7); }
-  50% { opacity: 1; transform: scale(1.3); }
-  100% { opacity: 0.3; transform: scale(0.7); }
-}
 
-@keyframes moveFirefly {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(var(--x), var(--y)); }
-}
-
-/* Mobile-specific adjustments for floating tech icons */
-@media (max-width: 768px) {
-  /* Reduce floating icon size */
-  .tech-icon {
-    width: 35px;
-    height: 35px;
-    animation: floatIconsMobile 4s ease-in-out infinite;
-  }
-
-  /* Reposition icons nicely around avatar */
-  .icon1 { top: 5%; left: 5%; }
-  .icon2 { top: 5%; right: 5%; }
-  .icon3 { bottom: 5%; left: 10%; }
-  .icon4 { bottom: 20%; right: 5%; }
-  .icon5 { top: 20%; left: 5%; }
-  .icon6 { top: 20%; right: 10%; }
-  .icon7 { bottom: 15%; left: 8%; }
-  .icon8 { bottom: 10%; right: 12%; }
-  .icon9 { top: 25%; left: 12%; }
-  .icon10 { bottom: 18%; right: 5%; }
-  .icon11 { bottom: 5%; right: 8%; }
-  .icon12 { bottom: 5%; left: 8%; }
-
-  /* Smaller float animation for mobile */
-  @keyframes floatIconsMobile {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
-  }
-}
 
