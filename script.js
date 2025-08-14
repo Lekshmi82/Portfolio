@@ -85,3 +85,27 @@ function createFireflies() {
 
 // initial creation
 createFireflies();
+
+// Smooth scroll & active link highlighting
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+function activateNav() {
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 80; // adjust for header height
+    if (window.pageYOffset >= sectionTop) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');
+    }
+  });
+}
+
+window.addEventListener('scroll', activateNav);
+
