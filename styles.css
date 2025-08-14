@@ -556,60 +556,32 @@ body, html {
   100% { transform: translate(var(--x), var(--y)); }
 }
 
-/* ---------------- Mobile / Tablet Adjustments ---------------- */
-
+/* Mobile-specific adjustments for floating tech icons */
 @media (max-width: 768px) {
-  /* Hero Section */
-  .center-name h1 {
-    font-size: 10vw;
-  }
-  .elegant-font {
-    font-size: 6vw; 
-  }
-  .home-btn {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-
-  /* About Section */
-  .avatar-img {
-    width: 150px;
-    height: 200px;
-  }
+  /* Reduce floating icon size */
   .tech-icon {
-    width: 30px;
-    height: 30px;
-  }
-  .about-center-container {
-    height: auto;
-    padding-bottom: 100px;
+    width: 35px;
+    height: 35px;
+    animation: floatIconsMobile 4s ease-in-out infinite;
   }
 
-  /* Timeline Section */
-  .timeline::after {
-    left: 20px;
-  }
-  .timeline-item {
-    width: 100%;
-    padding-left: 50px;
-    padding-right: 20px;
-  }
-  .timeline-item.right {
-    left: 0;
-  }
-  .timeline-item::before {
-    left: 0;
-  }
-}
+  /* Reposition icons nicely around avatar */
+  .icon1 { top: 5%; left: 5%; }
+  .icon2 { top: 5%; right: 5%; }
+  .icon3 { bottom: 5%; left: 10%; }
+  .icon4 { bottom: 20%; right: 5%; }
+  .icon5 { top: 20%; left: 5%; }
+  .icon6 { top: 20%; right: 10%; }
+  .icon7 { bottom: 15%; left: 8%; }
+  .icon8 { bottom: 10%; right: 12%; }
+  .icon9 { top: 25%; left: 12%; }
+  .icon10 { bottom: 18%; right: 5%; }
+  .icon11 { bottom: 5%; right: 8%; }
+  .icon12 { bottom: 5%; left: 8%; }
 
-@media (max-width: 600px) {
-  /* Projects Section */
-  .projects-container {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  .project-box img {
-    width: 100%;
-    height: auto;
+  /* Smaller float animation for mobile */
+  @keyframes floatIconsMobile {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
   }
 }
