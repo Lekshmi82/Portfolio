@@ -555,3 +555,61 @@ body, html {
   0% { transform: translate(0, 0); }
   100% { transform: translate(var(--x), var(--y)); }
 }
+
+/* ---------------- Mobile / Tablet Adjustments ---------------- */
+
+@media (max-width: 768px) {
+  /* Hero Section */
+  .center-name h1 {
+    font-size: 10vw;
+  }
+  .elegant-font {
+    font-size: 6vw; 
+  }
+  .home-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  /* About Section */
+  .avatar-img {
+    width: 150px;
+    height: 200px;
+  }
+  .tech-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .about-center-container {
+    height: auto;
+    padding-bottom: 100px;
+  }
+
+  /* Timeline Section */
+  .timeline::after {
+    left: 20px;
+  }
+  .timeline-item {
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 20px;
+  }
+  .timeline-item.right {
+    left: 0;
+  }
+  .timeline-item::before {
+    left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Projects Section */
+  .projects-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .project-box img {
+    width: 100%;
+    height: auto;
+  }
+}
