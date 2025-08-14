@@ -26,7 +26,7 @@ for (let i = 0; i < 100; i++) {
   });
 }
 
-function animate() {
+function animateParticles() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   particles.forEach(p => {
     ctx.beginPath();
@@ -35,12 +35,12 @@ function animate() {
     ctx.fill();
     p.x += p.dx;
     p.y += p.dy;
-    if (p.x < 0 || p.x > canvas.width) p.dx *= -2;
-    if (p.y < 0 || p.y > canvas.height) p.dy *= -2;
+    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
   });
-  requestAnimationFrame(animate);
+  requestAnimationFrame(animateParticles);
 }
-animate();
+animateParticles();
 
 window.addEventListener('resize', () => {
   canvas.width = window.innerWidth;
@@ -50,11 +50,10 @@ window.addEventListener('resize', () => {
 // =======================
 // Fireflies
 // =======================
-// =======================
-// Fireflies
-// =======================
 const container = document.getElementById('firefly-container');
-const fireflyCount = 40; // slightly more for denser effect
+
+// Adjust firefly count for mobile
+const fireflyCount = window.innerWidth < 768 ? 15 : 30;
 
 function createFireflies() {
   container.innerHTML = ''; // clear old fireflies
@@ -70,13 +69,13 @@ function createFireflies() {
     firefly.style.top = y + 'px';
 
     // random movement range
-    const moveX = (Math.random() - 0.5) * 200; // +-100px
-    const moveY = (Math.random() - 0.5) * 200;
+    const moveX = (Math.random() - 0.5) * 150;
+    const moveY = (Math.random() - 0.5) * 150;
     firefly.style.setProperty('--x', moveX + 'px');
     firefly.style.setProperty('--y', moveY + 'px');
 
     // random animation duration & delay
-    const duration = 3 + Math.random() * 3; // 3-6s
+    const duration = 4 + Math.random() * 2;
     firefly.style.animationDuration = `${duration}s, ${duration}s`;
     firefly.style.animationDelay = `${Math.random() * 2}s, ${Math.random() * 2}s`;
 
