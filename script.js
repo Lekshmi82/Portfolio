@@ -45,44 +45,4 @@ animateParticles();
 window.addEventListener('resize', () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-  createFireflies(); // recreate fireflies on resize
 });
-
-// =======================
-// Fireflies
-// =======================
-const fireflyContainer = document.getElementById('firefly-container');
-let fireflyCount = 30;
-
-// Adjust for smaller screens
-if(window.innerWidth < 768) fireflyCount = 15;
-
-function createFireflies() {
-  fireflyContainer.innerHTML = ''; // remove old fireflies
-  for (let i = 0; i < fireflyCount; i++) {
-    const firefly = document.createElement('div');
-    firefly.classList.add('firefly');
-
-    const x = Math.random() * window.innerWidth;
-    const y = Math.random() * window.innerHeight;
-    firefly.style.left = x + 'px';
-    firefly.style.top = y + 'px';
-
-    // movement range
-    const moveX = (Math.random() - 0.5) * 150; // +-75px
-    const moveY = (Math.random() - 0.5) * 150;
-    firefly.style.setProperty('--x', moveX + 'px');
-    firefly.style.setProperty('--y', moveY + 'px');
-
-    // animation duration & delay
-    const duration = 4 + Math.random() * 2; // 4-6s
-    firefly.style.animationDuration = `${duration}s, ${duration}s`;
-    firefly.style.animationDelay = `${Math.random()*2}s, ${Math.random()*2}s`;
-
-    fireflyContainer.appendChild(firefly);
-  }
-}
-
-// initial creation
-createFireflies();
-
