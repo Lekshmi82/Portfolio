@@ -467,7 +467,109 @@ body, html {
     left: 0;
   }
 }
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #050d23;
+  color: #7f93b2;
+  margin: 0;
+  padding: 0;
+}
 
+.college-journey {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 40px 20px;
+}
+
+.journey-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #aec0ff;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.journey-box {
+  background-color: #051327;
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  gap: 40px;
+  box-shadow: 0 0 25px rgba(127, 147, 178, 0.2);
+  flex-wrap: wrap;
+}
+
+.journey-achievements,
+.journey-education {
+  flex: 1;
+  min-width: 300px;
+}
+
+.journey-achievements h2,
+.journey-education h2 {
+  color: #d6cfa1;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.journey-achievements ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.journey-achievements ul li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.journey-achievements ul li::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #d6cfa1;
+  border-radius: 50%;
+  top: 8px;
+  left: 0;
+}
+
+.edu-card {
+  background-color: #0c1a33;
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 4px solid #d6cfa1;
+  box-shadow: 0 0 10px rgba(127, 147, 178, 0.1);
+}
+
+.edu-card p {
+  margin: 10px 0;
+  font-size: 0.95rem;
+  color: #aec0ff;
+}
+
+.edu-card .degree {
+  font-weight: 600;
+}
+
+.edu-card .university {
+  color: #7f93b2;
+}
+
+.edu-card .year {
+  font-style: italic;
+  color: #7f93b2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .journey-box {
+    flex-direction: column;
+  }
+}
 
 /* FOOTER */
 
@@ -521,6 +623,7 @@ body, html {
   transition: transform 0.1s ease;
   z-index: 1000;
 }
+
 
 
 
