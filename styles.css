@@ -585,3 +585,14 @@ body, html {
     50% { transform: translateY(-6px); }
   }
 }
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Active nav link */
+.nav-links a.active {
+  color: #d6cfa1; /* highlight color */
+  font-weight: bold;
+}
+
