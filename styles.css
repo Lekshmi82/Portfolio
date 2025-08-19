@@ -627,36 +627,47 @@ body, html {
   z-index: 1000;
 }
 
-.hero-wrapper {
-  position: relative; /* container for hero + fireflies */
-  height: 100vh;
-  overflow: hidden; /* fireflies stay within this section */
-}
-
+/* --- Firefly / tiny glowing lights --- */
 .firefly-container {
- position: absolute; /* absolute inside hero only */
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0; /* behind hero content */
-  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* behind content */
+  overflow: hidden;
+  background: #050d23; /* dark blue background */
 }
 
 .firefly {
   position: absolute;
   width: 4px;
   height: 4px;
-  background: #ffe48d; /* yellow fireflies */
+  background: #fffacd; /* bright light yellow */
   border-radius: 50%;
-  opacity: 0.8;
-  box-shadow: 0 0 6px #ffe48d, 0 0 12px #ffe48d, 0 0 18px #ffe48d;
-  animation: flicker 2s infinite alternate;
+  opacity: 0.9;
+  pointer-events: none;
+  box-shadow: 0 0 6px #fffacd, 0 0 12px #fffacd, 0 0 18px #fffacd; /* glowing effect */
+  animation: flicker 2.5s infinite alternate, moveFirefly linear infinite;
 }
 
 @keyframes flicker {
   0% { opacity: 0.3; transform: scale(0.7); }
-  50% { opacity: 1; transform: scale(1.2); }
+  50% { opacity: 1; transform: scale(1.3); }
   100% { opacity: 0.3; transform: scale(0.7); }
 }
+
+@keyframes moveFirefly {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(var(--x), var(--y)); }
+}
+
+
+
+
+
+
+
+
+
 
