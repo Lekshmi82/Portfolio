@@ -627,13 +627,19 @@ body, html {
   z-index: 1000;
 }
 
+.hero-wrapper {
+  position: relative; /* container for hero + fireflies */
+  height: 100vh;
+  overflow: hidden; /* fireflies stay within this section */
+}
+
 .firefly-container {
-  position: fixed;
+ position: absolute; /* absolute inside hero only */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0; /* behind content but above background */
+  z-index: 0; /* behind hero content */
   pointer-events: none;
 }
 
@@ -653,3 +659,4 @@ body, html {
   50% { opacity: 1; transform: scale(1.2); }
   100% { opacity: 0.3; transform: scale(0.7); }
 }
+
