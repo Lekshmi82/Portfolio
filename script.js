@@ -61,6 +61,7 @@ for (let i = 0; i < numberOfFireflies; i++) {
   firefly.style.top = Math.random() * 100 + 'vh';
   firefly.style.left = Math.random() * 100 + 'vw';
   fireflyContainer.appendChild(firefly);
+
   fireflies.push({
     el: firefly,
     x: parseFloat(firefly.style.left),
@@ -75,9 +76,10 @@ function animateFireflies() {
     f.x += f.dx;
     f.y += f.dy;
 
-    // Bounce inside viewport
-    if (f.x < 0 || f.x > 100) f.dx *= -1;
-    if (f.y < 0 || f.y > 100) f.dy *= -1;
+    if (f.x < 0) f.x = 0;
+    if (f.x > 100) f.x = 100;
+    if (f.y < 0) f.y = 0;
+    if (f.y > 100) f.y = 100;
 
     f.el.style.left = f.x + 'vw';
     f.el.style.top = f.y + 'vh';
@@ -86,4 +88,3 @@ function animateFireflies() {
 }
 
 animateFireflies();
-
