@@ -224,7 +224,7 @@ body, html {
 .projects .heading {
   text-align: center;
   font-size:  4vw;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
   color: #aec0ff;
 }
 
@@ -267,7 +267,8 @@ body, html {
 .project-box p {
   font-size: 0.9rem;
   color: #7f93b2;
-  margin-bottom: 12px;
+  margin-bottom:  1.5rem;
+  line-height: 1.4;
 }
 
 /* Visit Button */
@@ -660,6 +661,7 @@ body, html {
   0% { transform: translate(0, 0); }
   100% { transform: translate(var(--x), var(--y)); }
 }
+
 
 
 
