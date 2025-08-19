@@ -224,7 +224,7 @@ body, html {
 .projects .heading {
   text-align: center;
   font-size: clamp(1.8rem, 4vw, 3rem);
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   color: #aec0ff;
 }
 
@@ -660,6 +660,7 @@ body, html {
   0% { transform: translate(0, 0); }
   100% { transform: translate(var(--x), var(--y)); }
 }
+
 
 
 
