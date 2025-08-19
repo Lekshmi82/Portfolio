@@ -1,6 +1,6 @@
-Welcome to my profile! 
+# 👋 Hi, I’m Lekshmi Priya
 
-Mostly building things no one asked for, just testing ideas and seeing what sticks.
-Some projects hang out in private repos, quietly coding until they’re ready to show off :)
+Building things, learning fast, and adapting as I go.  
 
-🔗 [Visit Portfolio](https://lekshmipriya.netlify.app)
+🌐 [Check out my portfolio](https://lekshmipriya.netlify.app)
+
