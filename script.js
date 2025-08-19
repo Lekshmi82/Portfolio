@@ -47,3 +47,43 @@ window.addEventListener('resize', () => {
   canvas.height = window.innerHeight;
 });
 
+// Firefly background
+const fireflyContainer = document.createElement('div');
+fireflyContainer.className = 'firefly-container';
+document.body.appendChild(fireflyContainer);
+
+const numberOfFireflies = 30;
+const fireflies = [];
+
+for (let i = 0; i < numberOfFireflies; i++) {
+  const firefly = document.createElement('div');
+  firefly.className = 'firefly';
+  firefly.style.top = Math.random() * 100 + 'vh';
+  firefly.style.left = Math.random() * 100 + 'vw';
+  fireflyContainer.appendChild(firefly);
+  fireflies.push({
+    el: firefly,
+    x: parseFloat(firefly.style.left),
+    y: parseFloat(firefly.style.top),
+    dx: (Math.random() - 0.5) * 0.3,
+    dy: (Math.random() - 0.5) * 0.3
+  });
+}
+
+function animateFireflies() {
+  fireflies.forEach(f => {
+    f.x += f.dx;
+    f.y += f.dy;
+
+    // Bounce inside viewport
+    if (f.x < 0 || f.x > 100) f.dx *= -1;
+    if (f.y < 0 || f.y > 100) f.dy *= -1;
+
+    f.el.style.left = f.x + 'vw';
+    f.el.style.top = f.y + 'vh';
+  });
+  requestAnimationFrame(animateFireflies);
+}
+
+animateFireflies();
+
