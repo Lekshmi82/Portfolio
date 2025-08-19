@@ -627,19 +627,16 @@ body, html {
   z-index: 1000;
 }
 
-/* Firefly container */
 .firefly-container {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1; /* behind content */
-  overflow: hidden;
-  background: #0f172a; /* deep blue background */
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* behind content but above background */
+  pointer-events: none;
 }
 
-/* Firefly dots */
 .firefly {
   position: absolute;
   width: 4px;
@@ -647,12 +644,10 @@ body, html {
   background: #ffe48d; /* yellow fireflies */
   border-radius: 50%;
   opacity: 0.8;
-  pointer-events: none;
-  box-shadow: 0 0 6px #ffe48d, 0 0 12px #ffe48d;
+  box-shadow: 0 0 6px #ffe48d, 0 0 12px #ffe48d, 0 0 18px #ffe48d;
   animation: flicker 2s infinite alternate;
 }
 
-/* Flicker animation */
 @keyframes flicker {
   0% { opacity: 0.3; transform: scale(0.7); }
   50% { opacity: 1; transform: scale(1.2); }
