@@ -290,20 +290,21 @@ body, html {
 
 .more-projects {
   text-align: center;
-  margin-top: 25px;
-  font-size: 0.95rem;
+  margin-top: 40px; /* pushes it lower than projects */
+  font-size: 1rem;
+  color: #f1f5f9; /* optional: default text color */
 }
 
-.more-projects a {
-  color: #a5b4fc;
+.more-projects .github-link {
+  color: #ffe48d; /* your portfolio yellow */
   font-weight: bold;
   text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: all 0.3s ease;
+  transition: color 0.3s, transform 0.3s;
 }
 
-.more-projects a:hover {
-  border-bottom: 1px solid #a5b4fc;
+.more-projects .github-link:hover {
+  color: #bc9f3f; /* slightly darker yellow on hover */
+  transform: scale(1.05);
 }
 
 .github-icon {
@@ -656,6 +657,7 @@ body, html {
   0% { transform: translate(0, 0); }
   100% { transform: translate(var(--x), var(--y)); }
 }
+
 
 
 
