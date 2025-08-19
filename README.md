@@ -1,8 +1,6 @@
-Portfolio
+Welcome to my profile! 
 
-Welcome to my profile! Here you’ll find what I build, what I learn, and how I turn ideas into code (and sometimes coffee into bugs).  
+Mostly building things no one asked for, just testing ideas and seeing what sticks.
+Some projects hang out in private repos, quietly growing until they’re ready to shine ✨
 
-I’m a Computer Science undergrad, a passionate developer, and a lifelong learner exploring new tech every day.  
-
-## Live Demo
 🔗 [Visit Portfolio](https://lekshmipriya.netlify.app)
