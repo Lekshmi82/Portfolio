@@ -214,98 +214,74 @@ body, html {
   }
 }
 /* PROJECTS */
-
-/* PROJECTS */
+/* PROJECTS - Compact Version */
 .projects {
-  padding: 100px 20px;
+  padding: 60px 20px; /* reduced from 100px */
   display: flex;
   flex-direction: column;
-  align-items: center; /* centers heading and container */
+  align-items: center;
 }
 
 .projects .heading {
   text-align: center;
-  font-size: clamp(2rem, 4vw, 4rem);
-  margin-bottom: 50px;
+  font-size: clamp(1.8rem, 4vw, 3rem); /* slightly smaller */
+  margin-bottom: 30px; /* less space below heading */
   color: #aec0ff;
 }
 
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* smaller min width */
+  gap: 1.5rem; /* reduced gap */
   width: 100%;
-  max-width: 1200px; /* keeps container centered */
+  max-width: 1000px; /* narrower container */
 }
 
 .project-box {
   background-color: #051327;
-  padding: 2rem;
+  padding: 1.5rem; /* smaller padding */
   text-align: center;
   border-radius: 1rem;
-  box-shadow: 0 0.3rem 1rem #7f93b2;
+  box-shadow: 0 0.2rem 0.8rem #7f93b2;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 20px #aec0ff;
+  transform: translateY(-8px); /* slightly smaller hover move */
+  box-shadow: 0 0 15px #aec0ff;
 }
 
 .project-box img {
   width: 100%;
-  height: 200px;
+  height: 150px; /* reduced height */
   object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 15px;
+  border-radius: 8px;
+  margin-bottom: 12px;
 }
 
 .project-box h3 {
   color: #d6cfa1;
-  font-size: 1.6rem;
-  margin: 10px 0;
+  font-size: 1.4rem; /* slightly smaller */
+  margin: 8px 0;
 }
 
 .project-box p {
-  font-size: 1rem;
+  font-size: 0.9rem; /* smaller text */
   color: #7f93b2;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .visit-btn {
-  display: inline-block;
-  padding: 12px 24px;
-  border: 1px solid #ffe48d;
-  border-radius: 50px;
-  color: #ffe48d;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.visit-btn:hover {
-  background-color: #bc9f3f;
-  color: #0f0f0f;
+  padding: 10px 20px; /* smaller button */
+  font-size: 0.9rem;
 }
 
 .more-projects {
   text-align: center;
-  margin-top: 40px;
-  font-size: 1rem;
-  color: #f1f5f9;
+  margin-top: 25px; /* less spacing */
+  font-size: 0.95rem;
 }
 
-.more-projects a {
-  color: #a5b4fc;
-  font-weight: bold;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: all 0.3s ease;
-}
-
-.more-projects a:hover {
-  border-bottom: 1px solid #a5b4fc;
-}
 
 .github-icon {
   width: 18px;
@@ -657,4 +633,5 @@ body, html {
   0% { transform: translate(0, 0); }
   100% { transform: translate(var(--x), var(--y)); }
 }
+
 
