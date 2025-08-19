@@ -214,7 +214,6 @@ body, html {
   }
 }
 /* PROJECTS */
-/* PROJECTS - Compact Version With Visit Button */
 .projects {
   padding: 60px 20px;
   display: flex;
@@ -657,6 +656,7 @@ body, html {
   0% { transform: translate(0, 0); }
   100% { transform: translate(var(--x), var(--y)); }
 }
+
 
 
 
