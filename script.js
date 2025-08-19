@@ -47,11 +47,13 @@ window.addEventListener('resize', () => {
   canvas.height = window.innerHeight;
 });
 
-// Firefly background only inside Hero
+// =======================
+// Firefly background (only inside Hero)
+// =======================
 const hero = document.querySelector('.hero');
 const fireflyContainer = document.createElement('div');
 fireflyContainer.className = 'firefly-container';
-hero.appendChild(fireflyContainer); // append inside hero
+hero.appendChild(fireflyContainer);
 
 const numberOfFireflies = 30;
 const fireflies = [];
@@ -67,8 +69,8 @@ for (let i = 0; i < numberOfFireflies; i++) {
     el: firefly,
     x: parseFloat(firefly.style.left),
     y: parseFloat(firefly.style.top),
-    dx: (Math.random() - 0.5) * 0.3,
-    dy: (Math.random() - 0.5) * 0.3
+    dx: (Math.random() - 0.5) * 0.15, // slower movement
+    dy: (Math.random() - 0.5) * 0.15
   });
 }
 
