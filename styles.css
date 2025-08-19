@@ -300,6 +300,9 @@ body, html {
   font-weight: bold;
   text-decoration: none;
   transition: color 0.3s, transform 0.3s;
+  gap: 5px;
+  align-items: center;
+  display: inline-flex;
 }
 
 .more-projects .github-link:hover {
@@ -657,6 +660,7 @@ body, html {
   0% { transform: translate(0, 0); }
   100% { transform: translate(var(--x), var(--y)); }
 }
+
 
 
 
