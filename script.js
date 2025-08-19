@@ -47,10 +47,11 @@ window.addEventListener('resize', () => {
   canvas.height = window.innerHeight;
 });
 
-// Firefly background
+// Firefly background only inside Hero
+const hero = document.querySelector('.hero');
 const fireflyContainer = document.createElement('div');
 fireflyContainer.className = 'firefly-container';
-document.body.appendChild(fireflyContainer);
+hero.appendChild(fireflyContainer); // append inside hero
 
 const numberOfFireflies = 30;
 const fireflies = [];
